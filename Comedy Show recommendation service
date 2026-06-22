@@ -1,0 +1,30 @@
+"""Recommends a show based on age and style of humor."""
+
+# Show options to choose from for our recommendation.
+itysl = "I Think You Should Leave with Tim Robinson"
+detroiters = "Detroiters"
+auntie_donna = "Auntie Donna's big ol' house of fun"
+the_chair_company = "The Chair Company"
+portlandia = "Portlandia"
+
+# Collect user attributes to inform our recommendation.
+age = int(input("Are you 13, 14, or 15 years old? "))
+favorite_comedy_type = input("Do you prefer screaming, thriller, or normal comedies? ")
+
+# Make a course recommendation based on the user's attributes.
+rec = ""
+if age == 13:
+    # Course caters to younger learners.
+    rec = auntie_donna
+elif age == 14:
+    if favorite_comedy_type == "screaming":
+        rec = detroiters
+    else:
+        rec = portlandia
+else:
+    if favorite_comedy_type == "screaming":
+        rec = itysl
+    else:
+        rec = the_chair_company
+
+print("We recommend the comedy show: " + rec)
