@@ -1,0 +1,17 @@
+import random
+
+# Roll two six-sided dice.
+rolls_to_be_done = int(input("How many times would you like to roll the 2 die? "))
+total = 0
+num_rolls = 1
+
+#prints total of 2 dice for each roll
+while num_rolls <=rolls_to_be_done:
+    first_die = random.randint(1, 6)
+    second_die = random.randint(1, 6)
+    dice_sum = first_die + second_die
+    print("You rolled a " + str(dice_sum) + "!")
+    num_rolls=num_rolls+1
+    total = total+dice_sum
+#prints average of all rolls
+print(total/rolls_to_be_done)
