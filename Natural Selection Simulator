@@ -1,0 +1,50 @@
+"""Simulates natural selection in the fictional Neebler population."""
+
+import random
+
+# Starting population with each trait variation.
+small_neeblers = 100
+large_neeblers = 100
+generation = 1
+#printing initial values:
+print("gen_1: " + str(small_neeblers) + "small Neeblers")
+print("gen_1: " + str(large_neeblers) + "large Neeblers")
+
+#code for large neeblers
+while generation <=19 and large_neeblers > 0:
+    generation = generation +1
+    for neebler in range(large_neeblers):
+        # 1/3 chance of being spotted by predators sice their big.
+        chance_of_being_spotted = random.randint(1, 3)
+        if chance_of_being_spotted == 3:
+            large_neeblers = large_neeblers - 1
+    
+    baby_large_neeblers = 0
+    for neebler in range(large_neeblers):
+        # Largeness trait gets passed to their babies.
+        num_large_babies = random.randint(0, 3)
+        baby_large_neeblers = baby_large_neeblers + num_large_babies
+    
+    # Babies become the starting population of the next generation.
+    large_neeblers = baby_large_neeblers
+    
+    print("Gen " + str(generation) + ":" + str(large_neeblers) + " large Neeblers")
+
+
+#code for small neeblers
+    for neebler in range(small_neeblers):
+        # Low chance of being spotted by predators since they're small.
+        chance_of_being_spotted = random.randint(0, 4)
+        if chance_of_being_spotted == 4:
+            small_neeblers = small_neeblers - 1
+    
+    baby_small_neeblers = 0
+    for neebler in range(small_neeblers):
+        # Smallness trait gets passed to their babies.
+        num_babies = random.randint(0, 3)
+        baby_small_neeblers = baby_small_neeblers + num_babies
+    
+    # Babies become the starting population of the next generation.
+    small_neeblers = baby_small_neeblers
+    
+    print("Gen " + str(generation) + ":" + str(small_neeblers) + " small Neeblers")
