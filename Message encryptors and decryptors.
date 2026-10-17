@@ -1,0 +1,17 @@
+def encrypt(message):
+    """Returns the given message backwards."""
+    new_message=""
+    i=0
+    while i < len(message):
+        new_message+=message[-1-i]
+        i+=1
+    return new_message
+
+def decrypt(message):
+    """Returns the given message, flipped backwards again to make it forwards."""
+    new_message=""
+    i=0
+    while i < len(message):
+        new_message+=message[-1-i]
+        i+=1
+    return new_message
